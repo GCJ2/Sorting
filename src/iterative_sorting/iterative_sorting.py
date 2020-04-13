@@ -5,15 +5,17 @@ def selection_sort(arr):
         mindex = i
         # Set minimum index to i
         for j in range(i + 1, len(arr)):
+            # print(f'i: {i}')
             # Nested loop that starts at the next element in array
             if arr[j] < arr[mindex]:
+                # print(f'arr[j]: {arr[j]}, arr[mindex]: {arr[mindex]}')
                 # If variable found in nested loop is < the mindex
+                # print(f'mindex: {mindex}, j: {j}')
                 mindex = j
+                # print(f'mindex: {mindex}, j: {j}')
                 # Set that lower value to the mindex
-        if mindex != i:
-            # If mindex source j != mindex source i
-            arr[i], arr[mindex] = arr[mindex], arr[i]
-            # Swap the two values
+        arr[i], arr[mindex] = arr[mindex], arr[i]
+        # Swap the two values
 
     return arr
 
