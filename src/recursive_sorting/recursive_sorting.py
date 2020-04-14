@@ -30,13 +30,9 @@ def merge_sort(arr):
     array_length = len(arr)
     if array_length < 2:
         return arr
-
-    lray = arr[:array_length / 2]
-    rray = arr[array_length / 2:]
-
-    left_array: merge_sort(lray)
-    right_array: merge_sort(rray)
-    return merge(left_array, right_array)
+    left = merge_sort(arr[:len(arr)//2])
+    right = merge_sort(arr[len(arr)//2:])
+    return merge(left, right)
 
 
 # STRETCH: implement an in-place merge sort algorithm
