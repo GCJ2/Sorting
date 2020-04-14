@@ -7,20 +7,36 @@ def merge(arr_a, arr_b):
     merged_arr = []
     ldex = 0
     rdex = 0
-    if arr_a[ldex] > arr_b[rdex]:
-        merged_arr.append(arr_b[rdex])
-        rdex += 1
-    if arr_a[ldex] < arr_b[rdex]:
-        merged_arr.append(arr_a[ldex])
-        ldex += 1
+    while ldex < len(arr_a) and rdex < len(arr_b):
+        if arr_a[ldex] < arr_b[rdex]:
+            merged_arr.append(arr_a[ldex])
+            ldex += 1
+        else:
+            merged_arr.append(arr_b[rdex])
+            rdex += 1
+    if ldex == len(arr_a):
+        merged_arr.extend(arr_b[rdex:])
+    else:
+        merged_arr.extend(arr_a[ldex:])
     return merged_arr
+
+
+print(merge([2, 4], [1, 3]))
 
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort(arr):
     # TO-DO
+    array_length = len(arr)
+    if array_length < 2:
+        return arr
 
-    return arr
+    lray = arr[:array_length / 2]
+    rray = arr[array_length / 2:]
+
+    left_array: merge_sort(lray)
+    right_array: merge_sort(rray)
+    return merge(left_array, right_array)
 
 
 # STRETCH: implement an in-place merge sort algorithm
