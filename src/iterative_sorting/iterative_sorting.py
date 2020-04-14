@@ -1,6 +1,10 @@
 # TO-DO: Complete the selection_sort() function below 
+array = [1, 1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+
+
 def selection_sort(arr):
     for i in range(len(arr)):
+        # print(arr)
         # Loop through entire array
         mindex = i
         # Set minimum index to i
@@ -20,6 +24,9 @@ def selection_sort(arr):
     return arr
 
 
+print(selection_sort(array))
+
+
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     n = len(arr)
@@ -36,6 +43,9 @@ def bubble_sort(arr):
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
                 # Swap them
     return arr
+
+
+print(bubble_sort(array))
 
 
 # STRETCH: implement the Count Sort function below
